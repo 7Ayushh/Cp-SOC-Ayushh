@@ -1,0 +1,48 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    // Write C++ code here
+    int t;
+    cin>>t;
+    for(int i=0; i<t; i++){
+        int a,b;
+        cin>>a>>b;
+        if(a<=0 || b<=0) break;
+        int com_nd=0;
+        int stepsa,stepsb;
+        
+        // node find
+        int count=0,a0=a,b0=b;
+        while(1){
+            if(a0/2 != 0) {count++;
+                a0=a0/2;
+            }
+            else break;
+        }
+        int arr[count];      //length
+        int a1=a;
+        for(int k=0; k<count; k++){
+            arr[k] = a1;
+            a1=a1/2;
+        }
+        while(1){
+            for(int k=0; k<count; k++){
+                if(arr[k] == b0){ com_nd= b0;
+                            break; } 
+            }
+            if(com_nd == b0) break;
+            else b0=b0/2;
+        }
+        //steps
+        stepsa= log2(2*a/com_nd)/2; //to give gint
+        stepsb= log2(2*b/com_nd)/2;
+        int stepsc;
+        stepsc= stepsa+stepsb; //float point exception
+        cout<<stepsc<<endl;
+    }
+
+    return 0;
+}
