@@ -26,8 +26,8 @@ public:
                 
             }
         }
-        for(int i=i0;i<minimas.size();i++){
-            for(int j=j0;j<maximas.size();j++){
+        for(int i=0;i<minimas.size();i++){ // use some i0 or j0
+            for(int j=0;j<maximas.size();j++){
                 // phle minima
             }
         }
